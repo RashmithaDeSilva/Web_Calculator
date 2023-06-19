@@ -1,5 +1,7 @@
 @import 'colour-types.scss';
 @import 'mixin.scss';
+
+
 .body{
     background-color: $colour-type-2;
     display: flex;
@@ -11,7 +13,7 @@
 
 // Main box
 .main-box{
-    @include width-height(350px, 500px);
+    @include width-height(350px, 513px);
     //@include border($colour-type-1);
     border-radius: 30px;
 }
@@ -26,14 +28,16 @@
 #main-display{
     @include width-height(100%, 100px);
     @include border($colour-type-1);
-    background-color: $colour-type-5;
-    border-radius: 30px 30px 0px 0px; 
+    @include displays();
+    border-radius: 30px 30px 0px 0px;
+    font-size: 40px;
 }
 #secont-display{
     @include width-height(100%, 50px);
     @include border($colour-type-1);
-    background-color: $colour-type-5;
+    @include displays();
     border-radius: 0px 0px 10px 10px;
+    font-size: 20px;
 }
 
 
@@ -57,5 +61,12 @@
         @include border($colour-type-1);
         border-radius: 30px;
         font-size: 30px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .body {
+        margin-top: 2.5vh;
     }
 }
